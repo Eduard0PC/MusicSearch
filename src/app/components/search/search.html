@@ -1,0 +1,25 @@
+<div>
+  <h2>Buscador de Música</h2>
+
+  <input type="text" placeholder="Buscar artista o canción" [(ngModel)]="searchTerm" />
+
+  <button (click)="search()">Buscar</button>
+
+  <hr />
+
+  <p>Total canciones: {{ songs.length }}</p>
+
+@for (song of songs; track song.id) {
+  <div>
+    <img [src]="song.album.cover_medium" width="150" />
+
+    <h3>{{ song.title }}</h3>
+
+    <p>{{ song.artist.name }}</p>
+
+    <audio controls>
+      <source [src]="song.preview" />
+    </audio>
+  </div>
+}
+</div>
