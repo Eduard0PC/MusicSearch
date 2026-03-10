@@ -1,1 +1,59 @@
-<p>music-modal works!</p>
+@if (song) {
+  <div class="modal-backdrop" (click)="close()"></div>
+
+  <section class="modal">
+    <header class="modal-header">
+      <div>
+        <h2 class="modal-title">{{ song.title }}</h2>
+        <p class="modal-artist">{{ song.artist.name }}</p>
+      </div>
+      <button class="modal-close" type="button" (click)="close()" aria-label="Cerrar detalle">
+        ✕
+      </button>
+    </header>
+
+    <div class="modal-body">
+      <div class="modal-left">
+        <h3>Información</h3>
+
+        <dl class="info-list">
+          <div class="info-row">
+            <dt>Álbum</dt>
+            <dd>{{ song.album.title }}</dd>
+          </div>
+
+          <div class="info-row">
+            <dt>Artista</dt>
+            <dd>{{ song.artist.name }}</dd>
+          </div>
+
+          <div class="info-row">
+            <dt>Duración</dt>
+            <dd>{{ (song.duration / 60) | number : '1.0-0' }} min</dd>
+          </div>
+
+          <div class="info-row">
+            <dt>Popularidad</dt>
+            <dd>{{ song.rank }}</dd>
+          </div>
+        </dl>
+
+        <div class="player-section">
+          <p class="player-label">Escucha un fragmento:</p>
+          <audio controls preload="metadata">
+            <source [src]="song.preview" type="audio/mpeg" />
+          </audio>
+        </div>
+      </div>
+
+      <div class="modal-right">
+        <div class="cover-wrapper">
+          <img
+            [src]="song.album.cover_xl || song.album.cover_big || song.album.cover_medium"
+            [alt]="'Portada del álbum ' + song.album.title"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+}

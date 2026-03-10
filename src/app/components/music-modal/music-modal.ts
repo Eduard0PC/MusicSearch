@@ -1,9 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-music-modal',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './music-modal.html',
   styleUrl: './music-modal.css',
 })
-export class MusicModal {}
+export class MusicModal {
+  @Input() song: any | null = null;
+  @Output() closed = new EventEmitter<void>();
+
+  close() {
+    this.closed.emit();
+  }
+}

@@ -23,7 +23,7 @@
 
       @for (song of songs; track song.id) {
 
-        <div class="song-card">
+        <div class="song-card" (click)="openSong(song)">
 
           <div class="cd">
             <img [src]="song.album.cover_medium" />
@@ -44,5 +44,12 @@
     }
 
   </div>
+
+  @if (selectedSong) {
+    <app-music-modal
+      [song]="selectedSong"
+      (closed)="closeModal()"
+    />
+  }
 
 </div>

@@ -1,0 +1,152 @@
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: #000000a6;
+  z-index: 40;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  max-width: 920px;
+  max-height: 560px;
+  width: calc(100% - 2rem);
+  background: rgba(15, 20, 60, 0.9);
+  border-radius: var(--radius, 10px);
+  border: 1px solid #585858;
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.7),
+    0 0 15px rgba(226, 192, 0, 0.35),
+    0 0 35px rgba(226, 192, 0, 0.18);
+  display: flex;
+  flex-direction: column;
+  z-index: 50;
+  overflow: hidden;
+  backdrop-filter: blur(16px);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1.2rem 1.5rem 0.9rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.modal-title {
+  margin: 0 0 0.25em;
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--main-letter);
+}
+
+.modal-artist {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #ffffffb3;
+}
+
+.modal-close {
+  border: none;
+  background: transparent;
+  color: #ffffffa6;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0.15rem 0.4rem;
+  border-radius: 999px;
+  transition:
+    background 0.15s,
+    color 0.15s,
+    transform 0.05s;
+}
+
+.modal-close:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+}
+
+.modal-close:active {
+  transform: scale(0.96);
+}
+
+.modal-body {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 0;
+  padding: 1.25rem 1.5rem 1.5rem;
+  height: 100%;
+}
+
+.modal-left {
+  padding-right: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.modal-left h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+}
+
+.info-list {
+  margin: 0 0 1.25rem;
+  padding: 0;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.35rem 0;
+  font-size: 0.95rem;
+}
+
+.info-row dt {
+  font-weight: 500;
+  color: var(--main-letter);
+}
+
+.info-row dd {
+  margin: 0;
+  text-align: right;
+  color: #ffffffb3;
+}
+
+.player-section {
+  margin-top: 0.75rem;
+}
+
+.player-label {
+  margin: 0 0 0.4rem;
+  font-size: 0.9rem;
+  color: #ffffffb3;
+}
+
+.player-section audio {
+  width: 100%;
+  height: 38px;
+}
+
+.modal-right {
+  border-left: 1px solid rgba(255, 255, 255, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cover-wrapper {
+  width: 100%;
+  max-width: 320px;
+  padding-left: 1.25rem;
+}
+
+.cover-wrapper img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
+  display: block;
+}
