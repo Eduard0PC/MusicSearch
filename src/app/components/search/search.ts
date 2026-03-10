@@ -1,15 +1,10 @@
 import { Component } from '@angular/core';
 import { Music } from '../../services/music';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { MusicModal } from '../music-modal/music-modal';
 
 @Component({
   selector: 'app-search',
-  standalone: true,
-  imports: [CommonModule, FormsModule, MusicModal],
   templateUrl: './search.html',
-  styleUrl: './search.css',
+  styleUrls: ['./search.css']
 })
 export class Search {
   searchTerm = '';

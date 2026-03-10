@@ -16,40 +16,33 @@
   </div>
 
   <div class="results">
-
-    @if (songs.length > 0) {
-
+    <ng-container *ngIf="songs.length > 0; else noResults">
       <p class="total">Total canciones: {{ songs.length }}</p>
 
-      @for (song of songs; track song.id) {
-
-        <div class="song-card" (click)="openSong(song)">
-
-          <div class="cd">
-            <img [src]="song.album.cover_medium" />
-          </div>
-
-          <h3>{{ song.title }}</h3>
-
-          <p class="artist">{{ song.artist.name }}</p>
-
+      <div
+        class="song-card"
+        *ngFor="let song of songs"
+        (click)="openSong(song)"
+      >
+        <div class="cd">
+          <img [src]="song.album.cover_medium" />
         </div>
 
-      }
+        <h3>{{ song.title }}</h3>
 
-    } @else {
+        <p class="artist">{{ song.artist.name }}</p>
+      </div>
+    </ng-container>
 
+    <ng-template #noResults>
       <p class="no-results">No se encontraron canciones</p>
-
-    }
-
+    </ng-template>
   </div>
 
-  @if (selectedSong) {
-    <app-music-modal
-      [song]="selectedSong"
-      (closed)="closeModal()"
-    />
-  }
+  <app-music-modal
+    *ngIf="selectedSong"
+    [song]="selectedSong"
+    (closed)="closeModal()"
+  ></app-music-modal>
 
 </div>

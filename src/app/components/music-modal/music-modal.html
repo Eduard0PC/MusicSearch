@@ -1,4 +1,4 @@
-@if (song) {
+<ng-container *ngIf="song">
   <div class="modal-backdrop" (click)="close()"></div>
 
   <section class="modal">
@@ -56,4 +56,4 @@
       </div>
     </div>
   </section>
-}
+</ng-container>
