@@ -1,25 +1,48 @@
-<div>
-  <h2>Buscador de Música</h2>
+<div class="container">
 
-  <input type="text" placeholder="Buscar artista o canción" [(ngModel)]="searchTerm" />
+  <header>
+    <h2>Buscador de <span>Música 𝄞</span></h2>
+    <hr />
+  </header>
 
-  <button (click)="search()">Buscar</button>
+  <div class="search-box">
+    <input
+      type="text"
+      placeholder="Buscar artista o canción..."
+      [(ngModel)]="searchTerm"
+    />
 
-  <hr />
-
-  <p>Total canciones: {{ songs.length }}</p>
-
-@for (song of songs; track song.id) {
-  <div>
-    <img [src]="song.album.cover_medium" width="150" />
-
-    <h3>{{ song.title }}</h3>
-
-    <p>{{ song.artist.name }}</p>
-
-    <audio controls>
-      <source [src]="song.preview" />
-    </audio>
+    <button (click)="search()">Buscar</button>
   </div>
-}
+
+  <div class="results">
+
+    @if (songs.length > 0) {
+
+      <p class="total">Total canciones: {{ songs.length }}</p>
+
+      @for (song of songs; track song.id) {
+
+        <div class="song-card">
+
+          <div class="cd">
+            <img [src]="song.album.cover_medium" />
+          </div>
+
+          <h3>{{ song.title }}</h3>
+
+          <p class="artist">{{ song.artist.name }}</p>
+
+        </div>
+
+      }
+
+    } @else {
+
+      <p class="no-results">No se encontraron canciones</p>
+
+    }
+
+  </div>
+
 </div>

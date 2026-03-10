@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Prop+Double:wght@100..900&family=Bungee&family=Gloria+Hallelujah&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-gradient: linear-gradient(135deg, #00020f, #000524, #00010a);
+  --main-letter: #e2c000;
+  --radius: 5px;
+}
+
+body {
+  background: var(--bg-gradient);
+  min-height: 100vh;
+  padding: 40px;
+}
