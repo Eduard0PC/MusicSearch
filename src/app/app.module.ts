@@ -6,20 +6,20 @@ import { App } from './app';
 import { AppRoutingModule } from './app-routing.module';
 import { Search } from './components/search/search';
 import { MusicModal } from './components/music-modal/music-modal';
-import { MusicList } from './components/music-list/music-list';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
     App,
     Search,
-    MusicModal,
-    MusicList
+    MusicModal
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [App]

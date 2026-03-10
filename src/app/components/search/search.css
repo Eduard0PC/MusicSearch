@@ -132,3 +132,16 @@ h3 {
   margin-bottom: 20px;
   color: white;
 }
+
+.pagination {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+::ng-deep .ngx-pagination li a,
+::ng-deep .ngx-pagination li span {
+  color: white;
+  padding: 6px 10px;
+  border-radius: 5px;
+}

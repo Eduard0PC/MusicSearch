@@ -1,16 +1,11 @@
 <div class="container">
-
   <header>
     <h2>Buscador de <span>Música 𝄞</span></h2>
     <hr />
   </header>
 
   <div class="search-box">
-    <input
-      type="text"
-      placeholder="Buscar artista o canción..."
-      [(ngModel)]="searchTerm"
-    />
+    <input type="text" placeholder="Buscar artista o canción..." [(ngModel)]="searchTerm" />
 
     <button (click)="search()">Buscar</button>
   </div>
@@ -21,7 +16,7 @@
 
       <div
         class="song-card"
-        *ngFor="let song of songs"
+        *ngFor="let song of songs | paginate: { itemsPerPage: 6, currentPage: p }"
         (click)="openSong(song)"
       >
         <div class="cd">
@@ -39,10 +34,13 @@
     </ng-template>
   </div>
 
+  <div class="pagination" *ngIf="songs.length > 0">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+
   <app-music-modal
     *ngIf="selectedSong"
     [song]="selectedSong"
     (closed)="closeModal()"
   ></app-music-modal>
-
 </div>

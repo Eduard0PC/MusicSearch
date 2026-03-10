@@ -10,6 +10,7 @@ export class Search {
   searchTerm = '';
   songs: any[] = [];
   selectedSong: any | null = null;
+  p: number = 1;
 
   constructor(private musicService: Music) {}
 
