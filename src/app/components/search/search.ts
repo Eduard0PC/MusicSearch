@@ -1,10 +1,16 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { Music } from '../../services/music';
+import { MusicModal } from '../music-modal/music-modal';
 
 @Component({
   selector: 'app-search',
+  standalone: true,
+  imports: [CommonModule, FormsModule, NgxPaginationModule, MusicModal],
   templateUrl: './search.html',
-  styleUrls: ['./search.css']
+  styleUrls: ['./search.css'],
 })
 export class Search {
   searchTerm = '';

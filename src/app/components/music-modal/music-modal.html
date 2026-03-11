@@ -1,4 +1,4 @@
-<ng-container *ngIf="song">
+@if (song) {
   <div class="modal-backdrop" (click)="close()"></div>
 
   <section class="modal">
@@ -29,7 +29,7 @@
 
           <div class="info-row">
             <dt>Duración</dt>
-            <dd>{{ (song.duration / 60) | number : '1.0-0' }} min</dd>
+            <dd>{{ song.duration / 60 | number: '1.0-0' }} min</dd>
           </div>
 
           <div class="info-row">
@@ -56,4 +56,4 @@
       </div>
     </div>
   </section>
-</ng-container>
+}
