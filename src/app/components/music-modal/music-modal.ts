@@ -12,6 +12,20 @@ export class MusicModal {
   @Input() song: any | null = null;
   @Output() closed = new EventEmitter<void>();
 
+  isPlaying = false;
+
+  onAudioPlay() {
+    this.isPlaying = true;
+  }
+
+  onAudioPause() {
+    this.isPlaying = false;
+  }
+
+  onAudioEnded() {
+    this.isPlaying = false;
+  }
+
   close() {
     this.closed.emit();
   }

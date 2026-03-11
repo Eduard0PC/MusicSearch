@@ -40,14 +40,26 @@
 
         <div class="player-section">
           <p class="player-label">Escucha un fragmento:</p>
-          <audio controls preload="metadata">
+          <audio
+            controls
+            preload="metadata"
+            (play)="onAudioPlay()"
+            (pause)="onAudioPause()"
+            (ended)="onAudioEnded()"
+          >
             <source [src]="song.preview" type="audio/mpeg" />
           </audio>
         </div>
       </div>
 
       <div class="modal-right">
-        <div class="cover-wrapper">
+        <div class="cover-wrapper" [class.is-playing]="isPlaying">
+          <div class="disc" aria-hidden="true">
+            <img
+              [src]="song.album.cover_xl || song.album.cover_big || song.album.cover_medium"
+              [alt]="''"
+            />
+          </div>
           <img
             [src]="song.album.cover_xl || song.album.cover_big || song.album.cover_medium"
             [alt]="'Portada del álbum ' + song.album.title"
