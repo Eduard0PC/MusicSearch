@@ -34,7 +34,7 @@
 
           <div class="info-row">
             <dt>Popularidad</dt>
-            <dd>{{ song.rank }}</dd>
+            <dd>{{ (song.rank / 10000) | number:'1.0-0' }}%</dd>
           </div>
         </dl>
 

@@ -2,15 +2,13 @@
   max-width: 1200px;
   margin: auto;
   padding: 40px 20px;
+  font-family: 'Bungee', sans-serif;
 }
-
-/* titulo */
 
 h2 {
   color: white;
   text-align: center;
   font-size: 6rem;
-  font-family: 'Bungee', sans-serif;
 }
 
 span {
@@ -86,8 +84,8 @@ hr {
   transform: translateY(-8px);
   background: rgba(20, 30, 80, 0.7);
   border-color: var(--main-letter);
-    box-shadow:
-    0 10px 25px rgba(0,0,0,0.6),
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.6),
     0 0 15px rgba(226, 192, 0, 0.5),
     0 0 35px rgba(226, 192, 0, 0.25);
 }
@@ -117,16 +115,15 @@ h3 {
   color: white;
 }
 
-
-.no-results{
+.no-results {
   grid-column: 1 / -1;
   text-align: center;
   font-size: 1.3rem;
-  color: white;
+  color: #646464;
   opacity: 0.7;
 }
 
-.total{
+.total {
   grid-column: 1 / -1;
   text-align: center;
   margin-bottom: 20px;

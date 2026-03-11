@@ -17,10 +17,12 @@ export class Search {
   songs: any[] = [];
   selectedSong: any | null = null;
   p: number = 1;
+  hasSearched = false;
 
   constructor(private musicService: Music) {}
 
   search() {
+    this.hasSearched = true;
     this.musicService.searchMusic(this.searchTerm).subscribe((res: any) => {
       this.songs = res.data;
       console.log(res);
